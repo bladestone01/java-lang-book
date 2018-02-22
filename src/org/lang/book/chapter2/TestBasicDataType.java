@@ -1,66 +1,66 @@
 package org.lang.book.chapter2;
 
 /**
- * Õ¹Ê¾»ù±¾Êı¾İÀàĞÍµÄÊ¹ÓÃ¡£
+ * å±•ç¤ºåŸºæœ¬æ•°æ®ç±»å‹çš„ä½¿ç”¨ã€‚
  * 
  * @author chenjunfeng1
  *
  */
 public class TestBasicDataType {
 	public static void main(String[] args) {
-		int intNum = 16; // ÕûĞÍ
-		int intNum08 = 020; // 8½øÖÆ£¬
-		int intNum16 = 0x10; // 16½øÖÆ£¬16
-		int intNum02 = 0b10000; // 2½øÖÆ£¬4
+		int intNum = 16; // æ•´å‹
+		int intNum08 = 020; // 8è¿›åˆ¶ï¼Œ
+		int intNum16 = 0x10; // 16è¿›åˆ¶ï¼Œ16
+		int intNum02 = 0b10000; // 2è¿›åˆ¶ï¼Œ4
 
-		//Õ¹Ê¾intÀàĞÍÊı¾İµÄÊä³ö
-		System.out.println("16ÔÚ10½øÖÆµÄÖµÎª:" + intNum);
-		System.out.println("16ÔÚ8½øÖÆµÄÖµÎª:" + intNum08);
-		System.out.println("16ÔÚ16½øÖÆµÄÖµÎª:" + intNum16);
-		System.out.println("16ÔÚ2½øÖÆµÄÖµÎª:" + intNum02);
-		System.out.println("intÕ¼ÓÃµÄ×Ö½ÚÊı:" + Integer.SIZE / 8);
+		//å±•ç¤ºintç±»å‹æ•°æ®çš„è¾“å‡º
+		System.out.println("16åœ¨10è¿›åˆ¶çš„å€¼ä¸º:" + intNum);
+		System.out.println("16åœ¨8è¿›åˆ¶çš„å€¼ä¸º:" + intNum08);
+		System.out.println("16åœ¨16è¿›åˆ¶çš„å€¼ä¸º:" + intNum16);
+		System.out.println("16åœ¨2è¿›åˆ¶çš„å€¼ä¸º:" + intNum02);
+		System.out.println("intå ç”¨çš„å­—èŠ‚æ•°:" + Integer.SIZE / 8);
 
 		
-		short shortNum = 123;  //shortÀàĞÍµÄÊıÖµ£º123
-		//Õ¹Ê¾shortÀàĞÍÊı¾İµÄÊä³ö
-		System.out.println("shortÊı¾İµÄÖµÎª:" + shortNum);
-		System.out.println("ShortÕ¼ÓÃµÄ×Ö½ÚÊıÎª:" + Short.SIZE/8);
+		short shortNum = 123;  //shortç±»å‹çš„æ•°å€¼ï¼š123
+		//å±•ç¤ºshortç±»å‹æ•°æ®çš„è¾“å‡º
+		System.out.println("shortæ•°æ®çš„å€¼ä¸º:" + shortNum);
+		System.out.println("Shortå ç”¨çš„å­—èŠ‚æ•°ä¸º:" + Short.SIZE/8);
 		
-		long longNum = 123l;   //³¤ÕûĞÍµÄÊı¾İ123,Ê¹ÓÃºó×ºl
-		long longNum2 = 123;   //³¤ÕûĞÍµÄÊı¾İ123
-		//Õ¹Ê¾Ê¹ÓÃlongµÄÊı¾İÄÚÈİ
-		System.out.println("longÊı¾İµÄÖµ:" + longNum);
-		System.out.println("longÊı¾İµÄÖµ2:" + longNum2);
-		System.out.println("longÕ¼ÓÃµÄ×Ö½ÚÊı:" + Long.SIZE/8);
+		long longNum = 123l;   //é•¿æ•´å‹çš„æ•°æ®123,ä½¿ç”¨åç¼€l
+		long longNum2 = 123;   //é•¿æ•´å‹çš„æ•°æ®123
+		//å±•ç¤ºä½¿ç”¨longçš„æ•°æ®å†…å®¹
+		System.out.println("longæ•°æ®çš„å€¼:" + longNum);
+		System.out.println("longæ•°æ®çš„å€¼2:" + longNum2);
+		System.out.println("longå ç”¨çš„å­—èŠ‚æ•°:" + Long.SIZE/8);
 
-		byte byteNum = 115;  //ÉèÖÃbyteÀàĞÍÖµ
-		//byte byteOverNum = 137; //³¬³öÊı¾İÀàĞÍ·¶Î§£¬±àÒëÆ÷ÌáÊ¾´íÎó
-		System.out.println("byteÊı¾İµÄÄÚÈİ:" + byteNum);
-		System.out.println("byteÕ¼ÓÃµÄ×Ö½ÚÊı:" + Byte.SIZE/8);
+		byte byteNum = 115;  //è®¾ç½®byteç±»å‹å€¼
+		//byte byteOverNum = 137; //è¶…å‡ºæ•°æ®ç±»å‹èŒƒå›´ï¼Œç¼–è¯‘å™¨æç¤ºé”™è¯¯
+		System.out.println("byteæ•°æ®çš„å†…å®¹:" + byteNum);
+		System.out.println("byteå ç”¨çš„å­—èŠ‚æ•°:" + Byte.SIZE/8);
 		
 
-		float floatNum = 1.234f;  //µ¥¾«¶È¸¡µãÊıµÄÊıÖµ
-		//ÉùÃ÷Îª¸¡µãÊı£¬µ«ÊÇÎ´Ê¹ÓÃºó×ºf,±àÒëÆ÷±¨´í
-		//´íÎóĞÅÏ¢: Type mismatch: cannot convert from double to float
+		float floatNum = 1.234f;  //å•ç²¾åº¦æµ®ç‚¹æ•°çš„æ•°å€¼
+		//å£°æ˜ä¸ºæµ®ç‚¹æ•°ï¼Œä½†æ˜¯æœªä½¿ç”¨åç¼€f,ç¼–è¯‘å™¨æŠ¥é”™
+		//é”™è¯¯ä¿¡æ¯: Type mismatch: cannot convert from double to float
 	    //float floatNum1 = 1.234; 
-		System.out.println("floatµÄÊıÖµÎª:" + floatNum);
-		System.out.println("floatÕ¼ÓÃµÄ×Ö½ÚÊı:" + Float.SIZE/8);
+		System.out.println("floatçš„æ•°å€¼ä¸º:" + floatNum);
+		System.out.println("floatå ç”¨çš„å­—èŠ‚æ•°:" + Float.SIZE/8);
 		
 		
-		double doubleNum = 123.3332;  //Ë«¾«¶È¸¡µãÊıµÄÊıÖµ
-		System.out.println("doubleµÄÊıÖµÎª:" + doubleNum);
-		System.out.println("doubleÕ¼¾İµÄ×Ö½ÚÊı:" + Double.SIZE/8);
+		double doubleNum = 123.3332;  //åŒç²¾åº¦æµ®ç‚¹æ•°çš„æ•°å€¼
+		System.out.println("doubleçš„æ•°å€¼ä¸º:" + doubleNum);
+		System.out.println("doubleå æ®çš„å­—èŠ‚æ•°:" + Double.SIZE/8);
 
-		char charVariable = 'a';  //ÉùÃ÷×Ö·û±äÁ¿
-		char charVariable2 = 97;  //Ê¹ÓÃ×Ö·ûµÄÎ»ÖÃÂëÀ´ÉèÖÃ×Ö·û
-		System.out.println("charµÄ×Ö·ûÖµÎª:" + charVariable);
-		System.out.println("charµÄÎ»ÖÃÂëÉèÖÃÕ¹Ê¾Î»:" + charVariable2);
-		System.out.println("charÕ¼¾İµÄ×Ö½ÚÊıÎª:" + Character.SIZE/8);
+		char charVariable = 'a';  //å£°æ˜å­—ç¬¦å˜é‡
+		char charVariable2 = 97;  //ä½¿ç”¨å­—ç¬¦çš„ä½ç½®ç æ¥è®¾ç½®å­—ç¬¦
+		System.out.println("charçš„å­—ç¬¦å€¼ä¸º:" + charVariable);
+		System.out.println("charçš„ä½ç½®ç è®¾ç½®å±•ç¤ºä½:" + charVariable2);
+		System.out.println("charå æ®çš„å­—èŠ‚æ•°ä¸º:" + Character.SIZE/8);
 		
-		boolean isValid = true;  //²¼¶ûµÄtrueÖµ
-		boolean isWorking = false; //²¼¶ûµÄfalseÖµ
-		System.out.println("booleanµÄtrueÖµ:" + isValid);
-		System.out.println("booleanµÄfalseÖµ:" + isWorking);
+		boolean isValid = true;  //å¸ƒå°”çš„trueå€¼
+		boolean isWorking = false; //å¸ƒå°”çš„falseå€¼
+		System.out.println("booleançš„trueå€¼:" + isValid);
+		System.out.println("booleançš„falseå€¼:" + isWorking);
 	}
 
 }
