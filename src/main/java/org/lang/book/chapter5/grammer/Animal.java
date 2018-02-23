@@ -1,4 +1,4 @@
-package org.lang.book.chapter;
+package org.lang.book.chapter5.grammer;
 
 /**
  * 动物类.
