@@ -1,4 +1,4 @@
-package org.lang.book.chapter5.grammer;
+package org.lang.book.chapter5.superdemo;
 
 /**
  * 人类的实体类定义.
