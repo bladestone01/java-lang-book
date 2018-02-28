@@ -10,6 +10,7 @@ public class Out {
 		}
 	}
 	
+	
 	public static void main(String[] args) {
 		Out.Inner inner = new Out.Inner();
 		inner.print();
