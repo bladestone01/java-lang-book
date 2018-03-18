@@ -6,6 +6,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import org.lang.book.chapter8.consumer.Consumer;
+import org.lang.book.chapter8.consumer.Producer;
 import org.lang.book.chapter8.consumer.Zone;
 
 /**
@@ -49,8 +51,8 @@ public class CachedZone implements Zone {
 		}
 
 		storage.add(new Object());
-		System.out.println(
-				"[Producer]:生产了一个数据，[现在的缓冲区数据量]:" + storage.size() + ", [可用空间]:" + (MAX_SIZE - storage.size()));
+		System.out.println("[" + Thread.currentThread().getName() + "]:生产了一个数据，[现在的缓冲区数据量]:" + storage.size()
+				+ ", [可用空间]:" + (MAX_SIZE - storage.size()));
 
 		// 唤醒所有等待的消费者线程
 		empty.signalAll();
@@ -63,8 +65,8 @@ public class CachedZone implements Zone {
 	public void consume(String consumer) {
 		// 线程加锁
 		lock.lock();
-		
-		//检查缓存区域是否有数据
+
+		// 检查缓存区域是否有数据
 		while (storage.size() == 0) {
 			System.out.println("缓冲区已空, [Consumer]:暂无数据可以消费");
 			try {
@@ -73,11 +75,12 @@ public class CachedZone implements Zone {
 				e.printStackTrace();
 			}
 		}
-		
-		storage.remove(storage.size()-1);
-		System.out.println("[Consumer]:消费了一个产品，[现在缓冲区数据量]:" + storage.size() + ", [可用空间]:" + (MAX_SIZE - storage.size()));
-		
-		//唤醒所有等待中的生产者线程
+
+		storage.remove(storage.size() - 1);
+		System.out.println("[" + Thread.currentThread().getName() + "]:消费了一个产品，[现在缓冲区数据量]:" + storage.size()
+				+ ", [可用空间]:" + (MAX_SIZE - storage.size()));
+
+		// 唤醒所有等待中的生产者线程
 		full.signalAll();
 
 		// 线程释放锁
@@ -85,7 +88,16 @@ public class CachedZone implements Zone {
 	}
 
 	public static void main(String[] args) {
+		Zone zone = new CachedZone();
 
+		Producer producer1 = new Producer("producer1", zone);
+		Producer producer2 = new Producer("producer2", zone);
+		Consumer consumer1 = new Consumer("consumer1", zone);
+		Consumer consumer2 = new Consumer("consumer2", zone);
+
+		producer1.start();
+		producer2.start();
+		consumer1.start();
+		consumer2.start();
 	}
-
 }
