@@ -1,4 +1,4 @@
-package org.lang.book.chapter7.collections;
+package org.lang.book.chapter7.dates;
 
 import java.text.DateFormat;
 import java.text.ParseException;
