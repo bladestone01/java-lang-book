@@ -33,5 +33,7 @@ public class LocalTimeTest {
         //Getting date from the base date i.e 01/01/1970
         LocalTime specificSecondTime = LocalTime.ofSecondOfDay(1000);
         System.out.println("10000th second time= "+specificSecondTime);
+        
+        
 	}
 }

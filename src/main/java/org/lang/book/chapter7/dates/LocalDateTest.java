@@ -17,6 +17,11 @@ public class LocalDateTest {
 		//创建LocalDate时间
 		LocalDate today = LocalDate.now();
 		System.out.println("Current Day:" + today);
+		int year = today.getYear();
+		int month = today.getMonthValue();
+		int day = today.getDayOfMonth();
+		System.out.printf("Year : %d Month : %d day : %d \t %n", year, month, day);
+
 
 		//创建指定时日期的实际
 		LocalDate specificDate = LocalDate.of(2018,  Month.JANUARY, 1);
