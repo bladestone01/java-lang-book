@@ -1,4 +1,4 @@
-package org.lang.book.chapter7.dates;
+package org.lang.book.chapter7.dates.java8;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package org.lang.book.chapter7.dates;
+package org.lang.book.chapter7.dates.java8;
 
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -23,7 +23,7 @@ public class LocalTimeTest {
         //Exception in thread "main" java.time.DateTimeException: 
         //Invalid value for HourOfDay (valid values 0 - 23): 25
  
-        //Current date in "Asia/Kolkata", you can get it from ZoneId javadoc
+        //Current date in "Asia/Tokyo", you can get it from ZoneId javadoc
         LocalTime timeKolkata = LocalTime.now(ZoneId.of("Asia/Tokyo"));
         System.out.println("Current Time in Tokyo="+timeKolkata);
  
