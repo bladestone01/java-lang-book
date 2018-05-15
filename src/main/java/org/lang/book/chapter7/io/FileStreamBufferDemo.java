@@ -78,7 +78,7 @@ public class FileStreamBufferDemo {
 		
 		String tempStr = null;
 		while ((tempStr = bufferedReader.readLine()) != null) {
-			System.out.print(tempStr);
+			System.out.println(tempStr);
 		}
 
 		reader.close();
@@ -109,7 +109,7 @@ public class FileStreamBufferDemo {
 		FileStreamBufferDemo fsdemo = new FileStreamBufferDemo();
 		// fsdemo.testFileInputStream();
 		// fsdemo.testFileOutputStream();
-		//fsdemo.testFileReader();
-		fsdemo.testFileWriter();
+		fsdemo.testFileReader();
+		//fsdemo.testFileWriter();
 	}
 }

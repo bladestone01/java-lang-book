@@ -12,18 +12,32 @@ import java.io.InputStream;
  *
  */
 public class BufferPerformanceTest {
-	private static final String FILENAME = "/Users/tonychen/Downloads/judge-thinking.pdf";
+	private static final String FILENAME = "E:\\fashion-1.1.3.apk";
 
 	public static void main(String[] args) throws IOException {
-		int bufferSize = 128;
+		int bufferSize = 1024;
 		long l1 = readByBufferedInputStream(bufferSize);
 		long l2 = readByInputStream(bufferSize);
-		System.out.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
+		System.out
+				.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
 		
-		bufferSize = 500;
+		 bufferSize = 500;
+		 l1 = readByBufferedInputStream(bufferSize);
+		 l2 = readByInputStream(bufferSize);
+		System.out
+				.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
+		
+		bufferSize = 128;
 		l1 = readByBufferedInputStream(bufferSize);
 		l2 = readByInputStream(bufferSize);
-		System.out.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
+		System.out
+				.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
+		
+		bufferSize = 40;
+		l1 = readByBufferedInputStream(bufferSize);
+		l2 = readByInputStream(bufferSize);
+		System.out
+				.println("BufferSize:" + bufferSize + ", 通过BufferedInputStream读取用时：" + l1 + ";通过InputStream读取用时：" + l2);
 	}
 
 	public static long readByInputStream(int bufferSize) throws IOException {
