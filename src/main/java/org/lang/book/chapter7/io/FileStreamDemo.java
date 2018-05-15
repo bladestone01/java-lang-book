@@ -22,9 +22,8 @@ public class FileStreamDemo {
 		// 读取文件(字节流)
 		InputStream in = new FileInputStream("1.txt");
 
-		// 读取数据
-		// 一次性取多少字节
-		byte[] bytes = new byte[2048];
+		// 一次性读取数据的字节数
+		byte[] bytes = new byte[512];
 		// 接受读取的内容(n就代表的相关数据，只不过是数字的形式)
 		int n = -1;
 		// 循环取出数据
@@ -41,7 +40,7 @@ public class FileStreamDemo {
 		InputStream in = new FileInputStream("1.txt");
 		OutputStream out = new FileOutputStream(new File("2.txt"));
 
-		byte[] bytes = new byte[2048];
+		byte[] bytes = new byte[512];
 		int n = -1;
 		// 循环取出数据
 		while ((n = in.read(bytes, 0, bytes.length)) != -1) {
@@ -55,9 +54,13 @@ public class FileStreamDemo {
 		out.close();
 	}
 
+	/**
+	 * 基于字符来读入文件内容.
+	 * 
+	 * @throws IOException
+	 */
 	public void testFileReader() throws IOException {
 		FileReader reader = new FileReader("1.txt");
-		char[] buffer = new char[1024];
 		int ch = 0;
 		while ((ch = reader.read()) != -1) {
 			System.out.print((char) ch);
@@ -87,7 +90,7 @@ public class FileStreamDemo {
 
 	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
 		FileStreamDemo fsdemo = new FileStreamDemo();
-		// fsdemo.testFileInputStream();
+		//fsdemo.testFileInputStream();
 		// fsdemo.testFileOutputStream();
 		//fsdemo.testFileReader();
 		fsdemo.testFileWriter();
