@@ -6,7 +6,6 @@ package org.lang.book.chapter5.inner;
  * @author tonychen
  *
  */
-
 public class AnnoymousOut {
     private static int a;
     private int b;

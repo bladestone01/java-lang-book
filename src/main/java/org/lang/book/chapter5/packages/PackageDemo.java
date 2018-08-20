@@ -20,5 +20,4 @@ public class PackageDemo {
         
         System.out.println("absolute number:" + abs(-0.23));
 	}
-
 }
